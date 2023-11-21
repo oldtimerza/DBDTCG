@@ -1,0 +1,13 @@
+Card changes:
+X All perks should be Event not Surprise.
+X Change follow  the trail to be "if..." not "when".
+X Hillbilly abilitiy can only activate in your turn.
+X Moments respite should be Surprise Event.
+X Fear monger should have one time counter instead of two.
+
+New card ideas:
+Make a card that move progress counters between Generators.
+Cards to move Totems around the zones.
+
+
+

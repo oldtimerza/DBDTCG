@@ -1,0 +1,60 @@
+;Size definitions
+UNIT=MM
+PAGE=210,297,PORTRAIT,HV
+CARDSIZE=63,88
+
+
+LINKMULTI=Copies
+LINK=C:\Development\board-games\DBD-CCG\Cards\2023-11-15-Redesign\Expansion1.xlsx
+
+htmlimage = "1-{(Name)}", tapicon, "C:\Development\board-games\DBD-CCG\Cards\Icons\tapicon.png",4,4,P,90
+htmlimage = "1-{(Name)}", bloodicon, "C:\Development\board-games\DBD-CCG\Cards\Icons\Bloodpoint.png",4,4,P,90
+
+
+;VISUAL=GPS, 20, 20
+BORDER = RECTANGLE, #5c5755, 2, DOTTED
+IMAGE="1-{(Image)}",[Image],0%,0%,100%,100%
+;Killer/Survivor indicator(snap)(size)
+IF = [Playable] = Killer
+    IMAGE="1-{(Image)}",C:\Development\board-games\DBD-CCG\Cards\Icons\IconHelpLoading_killer.png,0%,0%,15%,10%,0,T
+ELSEIF = [Playable] = Survivor
+    IMAGE="1-{(Image)}",C:\Development\board-games\DBD-CCG\Cards\Icons\IconHelpLoading_survivor.png,0%,0%,15%,10%,0,T
+ELSEIF = [Playable] = Neutral
+    IMAGE="1-{(Image)}",C:\Development\board-games\DBD-CCG\Cards\Icons\IconHelp_perks.png,0%,0%,15%,10%,0,T
+ENDIF
+;Cost
+IF=[Cost]<>-1
+    IMAGE="1-{(Cost)}",C:\Development\board-games\DBD-CCG\Cards\Icons\Bloodpoint.png,2%,16%,15%,15%,0,T
+    TEXTFONT="1-{(Cost)}",[Cost],2%,16%,15%,15%,CENTER,CENTER,0,90,Franklin Gothic Medium Cond,16,T,#ffffff,#000000
+ENDIF
+IF=[DrainCost]<>-1
+    IMAGE="1-{(DrainCost)}",C:\Development\board-games\DBD-CCG\Cards\Icons\IconCurrency_iridescentShards.png,2%,33%,15%,15%,0,T
+    TEXTFONT="1-{(DrainCost)}",[DrainCost],2%,33%,15%,15%,CENTER,CENTER,0,90,Franklin Gothic Medium Cond,16,T,#ffffff,#000000
+ENDIF
+;Card name(snap)(size)
+TEXTFONT="1-{(Name)}",[Name],15%,0%,70%,12%,CENTER,CENTER,0,90,Franklin Gothic Medium Cond,12,FT,#FFFFFF,#000000
+;Card Type(snap)(size)
+IF=[Type]<>""
+    TEXTFONT="1-{(Type)}",JOIN([Type], " - ",[SubType]),0%,60%,100%,10%,CENTER,CENTER,0,90,Franklin Gothic Medium Cond,8,,#FFFFFF,#000000
+ENDIF
+;Card Effect(snap)(size)
+HTMLFONT = textfont, Franklin Gothic Medium Cond, 8, , #FFFFFF, CENTER
+HTMLTEXT="1-{(Text)}",[Text],0%,70%,100%,30%,#000000,0,G,90,textfont
+;Presence(snap)(size)
+If =[Presence]<>-1
+    IMAGE="1-{(Presence)}",C:\Development\board-games\DBD-CCG\Cards\Icons\IconPerks_insidious.png,16%,90%,15%,10%,0,T
+    TEXTFONT="1-{(Presence)}",[Presence],0%,90%,15%,10%,CENTER,CENTER,0,90,Franklin Gothic Medium Cond,16,T,#FFFFFF,#000000
+ENDIF
+;Range(snap)(size)
+If =[Range]<>-1
+    IMAGE="1-{(Range)}",C:\Development\board-games\DBD-CCG\Cards\Icons\IconPerks_deadHard.png,70%,90%,15%,10%,0,T
+    TEXTFONT="1-{(Range)}",[Range],85%,90%,15%,10%,CENTER,CENTER,0,90,Franklin Gothic Medium Cond,16,T,#FFFFFF,#000000
+ENDIF
+
+
+;Export batches for TTS
+DISPLAY="dbdtcg_tts_exp1_1.png",1,11,5
+DISPLAY="dbdtcg_tts_exp1_2.png",12,20,5
+
+
+;ENDVISUAL
