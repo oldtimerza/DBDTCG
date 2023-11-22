@@ -63,10 +63,11 @@ ENDIF
 ;Killer cards
 DISPLAY="dbdtcg_tts_killer.png",1,18,5
 ;Survivor cards
-DISPLAY="dbdtcg_tts_survivor.png",19,34,5
+DISPLAY="dbdtcg_tts_neutral.png",19,34,5
 ;Neutral cards;
-DISPLAY="dbdtcg_tts_neutral.png",35,55,5
+DISPLAY="dbdtcg_tts_survivor.png",35,55,5
 ;General
 DISPLAY="dbdtcg_tts_general.png",56,59,2
-
+;Memento Mori - new card
+DISPLAY="dbdtcg_tts_memento.png",60,63,2
 ;ENDVISUAL
